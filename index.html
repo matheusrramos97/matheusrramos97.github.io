@@ -1,6 +1,10 @@
 <h2>Input simples visível</h2>
 <input type="file" id="myfile" name="myfile" accept="image/*,video/mp4">
 
+<h2>Input simples visível Tirar Foto</h2>
+<button onclick="document.getElementById('cameraInput').click()">Tirar Foto</button>
+<input type="file" accept="image/*,video/mp4" capture="environment" id="cameraInput" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
+
 <h2>Input simples visível multiple</h2>
 <input type="file" multiple id="mmyfile" name="mmyfile" accept="image/*,video/mp4">
 
