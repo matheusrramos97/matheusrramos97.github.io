@@ -1,17 +1,38 @@
-<h2>Input simples visivel</h2>
-<input type="file" multiple id="myfile" name="myfile" accept="image/*, video/mp4">
+<h2>Input simples visível multiple</h2>
+<input type="file" multiple id="myfile" name="myfile" accept="image/,video/mp4">
+
+<h2>Input simples visível</h2>
+<input type="file" id="myfile" name="myfile" accept="image/,video/mp4">
+
+<h2>Input igual ao K-Flow multiple</h2>
+<a id="photosAndVideosUploadButtonMultiple" href="#">
+    <span>Fotos ou Vídeos</span>
+</a>
+
+<input type="file" multiple id="photosAndVideosUploadInputMultiple" accept="image/,video/mp4" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
 
 <h2>Input igual ao K-Flow</h2>
 <a id="photosAndVideosUploadButton" href="#">
     <span>Fotos ou Vídeos</span>
 </a>
 
-<input type="file" multiple id="photosAndVideosUploadInput" hidden accept="image/*, video/mp4">
+<input type="file" multiple id="photosAndVideosUploadInput" accept="image/,video/mp4" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;">
 
 <script>
-    const photosAndVideosUploadButton = document.getElementById('photosAndVideosUploadButton');
+    const photosAndVideosUploadButtonMultiple = document.getElementById('photosAndVideosUploadButtonMultiple');
+    const photosAndVideosUploadInputMultiple = document.getElementById('photosAndVideosUploadInputMultiple');
 
-    if (photosAndVideosUploadButton) {
+    if (photosAndVideosUploadButtonMultiple && photosAndVideosUploadInputMultiple) {
+        photosAndVideosUploadButtonMultiple.addEventListener('click', function (event) {
+            event.preventDefault();
+            photosAndVideosUploadInputMultiple.click();
+        });
+    }
+
+    const photosAndVideosUploadButton = document.getElementById('photosAndVideosUploadButton');
+    const photosAndVideosUploadInput = document.getElementById('photosAndVideosUploadInput');
+
+    if (photosAndVideosUploadButton && photosAndVideosUploadInput) {
         photosAndVideosUploadButton.addEventListener('click', function (event) {
             event.preventDefault();
             photosAndVideosUploadInput.click();
